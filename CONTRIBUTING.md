@@ -72,6 +72,6 @@ Keep the main branch stable and working.
 Pull before pushing to avoid conflicts.
 
 ## 📞 Questions?
-Reach out to @Himangshuroy101 on GitHub or directly via chat if you need any help or clarification.
+Reach out to [@Himangshuroy101](https://github.com/Himangshuroy101) on GitHub or directly via chat if you need any help or clarification.
 
 Happy Coding! 🎉
