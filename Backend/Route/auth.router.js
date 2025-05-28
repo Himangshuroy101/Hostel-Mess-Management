@@ -108,6 +108,7 @@ router.post("/register", async (req, res) => {
             courseDuration,
             admissionId,
             termsAccepted,
+            otpVerified:true,
             status: "pending"
         });
 
