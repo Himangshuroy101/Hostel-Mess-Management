@@ -19,8 +19,8 @@ function App() {
       <Card/>
       <InfoCard/>
       <Demo/>
-
       <TextDemo />
+    
     </>
   )
 }
