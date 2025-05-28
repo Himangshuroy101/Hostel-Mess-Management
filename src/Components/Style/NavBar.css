@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    background:black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color:#ffc300;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login,
+  .signup {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background: transparent;
+  }
+  
+  .login:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .signup {
+    background: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .signup:hover {
+    background: #0056b3;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  /* ========New Css============= */
+  .logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* .headinName{
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffc300;
+    
+  } */
+   .navHeading{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+   }
+   .headingName{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffc300;
+    text-transform: uppercase;
+   }
+   .subHeading{
+    text-decoration: none;
+    color: #ffc300;
+    font-weight: 400;
+    opacity: 0.5;
+   }
+
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+      color: #ffc300;
+    }
+  }
+  
