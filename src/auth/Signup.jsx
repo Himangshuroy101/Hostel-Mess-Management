@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-// import "./Signup.css";
+import "./Signup.css";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -246,7 +246,7 @@ function Signup() {
               <div className="form-check">
                 <input className="form-check-input" type="checkbox" id="termsCheck" checked={termsAccepted} onChange={(e) => setTermsAccepted(e.target.checked)} required />
                 <label className="form-check-label" htmlFor="termsCheck">
-                  {/* I agree to the <Link to="/terms">terms and conditions</Link>. */}
+                  I agree to the <Link to="/terms">terms and conditions</Link>.
                 </label>
               </div>
             </div>
@@ -256,7 +256,7 @@ function Signup() {
             </div>
 
             <div className="para col-12 text-center mt-3">
-              {/* <p>Already registered? <Link to="/login">Sign in</Link></p> */}
+              <p>Already registered? <Link to="/login">Sign in</Link></p>
             </div>
           </div>
         </form>

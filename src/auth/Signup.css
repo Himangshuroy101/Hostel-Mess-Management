@@ -1,0 +1,27 @@
+/* .signup{
+    height: 130vh;
+    background-color: rgb(227, 225, 222) !important;
+}
+.form-check a{
+    text-decoration: none;
+}
+.para a{
+    text-decoration: none;
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 1.5rem !important;
+    }
+
+    .input-group > .form-control,
+    .input-group > .btn {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+} */

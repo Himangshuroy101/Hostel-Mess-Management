@@ -25,8 +25,8 @@ export default function Navbar() {
           <a href="#">Gallery</a>
           <a href="#">Contributors</a>
           <div className="buttons">
-            <button className="login">Login</button>
-            <button className="signup">  Sign Up / Register</button>
+            <button className="login"><Link to="/login"> Login </Link></button>
+            <button className="signup"><Link to="/register" > Sign Up / Register</Link></button>
           </div>
         </div>
         <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>

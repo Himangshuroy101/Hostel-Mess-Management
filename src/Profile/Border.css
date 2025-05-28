@@ -1,0 +1,62 @@
+/* .profile-page {
+    background-color: #f8f9fa;
+    padding: 1rem;
+} 
+
+img{
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+} */
+/* Entrance Animations */
+/* .animated-fade-in {
+    animation: zoomIn 1s ease forwards;
+    opacity: 0;
+}
+
+.animated-slide-up {
+    animation: slideUpFade 1s ease forwards;
+    opacity: 0 ;
+} */
+
+/* Email icon hover animation */
+/* .email-link i {
+    transition: transform 0.3s ease !important;
+}
+.email-link:hover i {
+    transform: translateY(-3px) scale(1.1) !important;
+} */
+
+
+/* Make sure cards fill height on larger screens but stack properly on small screens */
+/* .leftcard,
+.rightcard {
+    min-height: 50vh;
+}
+@media (min-width: 768px) {
+    .leftcard,
+    .rightcard {
+        height: 100vh;
+    } 
+} */
+/* Keyframes */
+/* @keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} */
+
