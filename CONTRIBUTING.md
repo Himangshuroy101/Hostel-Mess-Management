@@ -12,8 +12,8 @@ We’re excited to have you contribute. Follow the guidelines below to keep our 
 If you haven't already, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Himangshuroy101/Hostel-Mess-Management.git
+cd Hostel-Mess-Management
 ```
 
 ### 2️⃣ Always Pull the Latest Changes
