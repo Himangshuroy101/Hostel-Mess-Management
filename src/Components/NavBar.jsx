@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './Style/NavBar.css';
 import logo from '../assets/images/Logo.jpg';
+import {Link} from 'react-router-dom'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Navbar() {
           <a href="#">Contributors</a>
           <div className="buttons">
             <button className="login">Login</button>
-            <button className="signup">Sign Up / Register</button>
+            <button className="signup">  Sign Up / Register</button>
           </div>
         </div>
         <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>

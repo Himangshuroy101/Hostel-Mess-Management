@@ -5,6 +5,8 @@ import Navbar from './Components/NavBar'
 import Slideshow from './Components/Slideshow'
 import Card from './Components/Card'
 import InfoCard from './Components/InfoCard'
+// import Signup from './auth/Signup'
+import Demo from './Components/Demo'
 import TextDemo from './Components/TextDemo'
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       <Slideshow/>
       <Card/>
       <InfoCard/>
+      <Demo/>
 
       <TextDemo />
     </>
