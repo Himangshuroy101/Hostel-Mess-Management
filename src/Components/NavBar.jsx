@@ -24,6 +24,7 @@ export default function Navbar() {
           <a href="#">Committee</a>
           <a href="#">Gallery</a>
           <a href="#">Contributors</a>
+          <Link to="/contact">Contact Us</Link>
           <div className="buttons">
             <button className="login"><Link to="/login"> Login </Link></button>
             <button className="signup"><Link to="/register" > Sign Up / Register</Link></button>
