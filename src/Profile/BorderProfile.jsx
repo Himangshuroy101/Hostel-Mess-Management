@@ -169,46 +169,76 @@
 // export default BorderProfile;
 
 
-
 import { useState, useEffect } from "react";
 import logo from '../assets/images/Logo.jpg';
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Navbar() {
+    const {userId} = useParams();
     const [isOpen, setIsOpen] = useState(false);
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
 
-    useEffect(()=>{
-        const userId = localStorage.getItem("userId");
+    // useEffect(() => {
+    //     // const userId = localStorage.getItem("userId");
         
-    })
+    //         if (userId) {
+    //             axios.get(`http://localhost:5050/profile/${userId}`, {
+    
+    //         })
+    //         .then((res) => setUser(res.data))
+    //         .catch((err) => console.log("Failed to fetch user", err));
+    //         }
+    //     // }catch(err){
+    //     //     console.log("Sorry for inconvinience", err);
+    //     // }
+    // }, [userId]);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                if (userId) {
+                    const res = await axios.get(`http://localhost:5050/profile/${userId}`);
+                    setUser(res.data);
+                }
+            } catch (err) {
+                console.log("Failed to fetch user", err);
+            }
+        };
+
+        fetchUser();
+    }, [userId]);
 
     return (
         <nav className="navbar">
         <div className="container">
-        <div className="logo-container">
+            <div className="logo-container">
             <div className="logo">
-            <img src={logo} alt="logo" height={55} width={55}/>
+                <img src={logo} alt="Radhakrishnan Bhawan logo" height={55} width={55} />
             </div>
             <div className="navHeading">
                 <a className="headingName" href="#">Radhakrishnan Bhawan</a>
                 <a className="subHeading">B.T Mens Hall</a>
             </div>
-        </div>
+            </div>
+
             <div className={`nav-links ${isOpen ? "active" : ""}`}>
-                {/* <Link to="/">Home</Link> */}
-                <Link to="/profile">Profile Name</Link>
-                <img
-                    className="rounded-circle mx-auto d-block img-fluid"
-                    style={{ width: "50px" }}
-                    src="https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg"
-                    alt="profile"
-                />
+            <Link to="/profile/:userId">{user ? `${user.firstName} ${user.lastName}` : "Profile Name"}</Link>
+            <img
+                className="rounded-circle mx-auto d-block img-fluid"
+                style={{ width: "50px" }}
+                src={user?.profilePicture || "https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg"}
+                alt={user?.name || "profile"}
+            />
             <div className="buttons">
-                <button className="signup"><Link to="/" > Logout <i class="fa-solid fa-right-from-bracket"></i></Link></button>
+                <button className="signup">
+                <Link to="/">
+                    Logout <i className="fa-solid fa-right-from-bracket"></i>
+                </Link>
+                </button>
             </div>
             </div>
+
             <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "✖" : "☰"}
             </div>

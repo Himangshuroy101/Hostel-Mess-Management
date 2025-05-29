@@ -66,7 +66,7 @@ function App() {
           <Route path="/terms" element={<Terms/>}></Route>
           <Route path="/request" element ={<Request/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
-          <Route path="/profile" element ={<BorderProfile/>}></Route>
+          <Route path="/profile/:userId" element ={<BorderProfile/>}></Route>
           <Route path="/adminProfile" element={<AdminProfile/>}></Route>
           <Route path="/ManagerProfile" element={<Manager/>}></Route>
         </Routes>
