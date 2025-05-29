@@ -193,7 +193,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Route: Get profile
-router.get("/profile/:id", async (req, res) => {
+router.get("/profile:id", async (req, res) => {
     const { id } = req.params;
 
     try {
