@@ -108,7 +108,7 @@ router.post("/register", async (req, res) => {
             courseDuration,
             admissionId,
             termsAccepted,
-            otpVerified:true,
+            otpVerified : true,
             status: "pending"
         });
 
@@ -169,11 +169,9 @@ router.post("/login", async (req, res) => {
         if (!user) {
             return res.status(401).json({ error: "Invalid email or password" });
         }
-
         // if (user.status !== "approved") {
         //     return res.status(403).json({ error: "Your request has not been approved yet." });
         // }
-
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ error: "Invalid email or password" });
