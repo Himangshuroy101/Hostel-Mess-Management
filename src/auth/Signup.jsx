@@ -153,8 +153,8 @@ function Signup() {
   };
 
   return (
-    <div className="signup container-fluid d-flex justify-content-center align-items-center">
-      <div className="card p-5 shadow-lg" style={{ width: "750px" }}>
+    <div className="signups container-fluid d-flex justify-content-center align-items-center">
+      <div className="card p-5 shadow-lg d-flex" style={{ width: "750px" }}>
         <h3 className="text-center mb-4">Register Here</h3>
         <form onSubmit={handleSubmit} className="needs-validation" noValidate>
           <div className="row g-3">

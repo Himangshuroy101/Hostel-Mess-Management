@@ -157,11 +157,11 @@ router.post("/admin/approve/:id", async (req, res) => {
 
 // Route: Login
 router.post("/login", async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, token} = req.body;
     if (!email || !password) {
         return res.status(400).json({ message: "Email and password are required." });
     }
-
+    
     try {
         const normalized = email.toLowerCase();
         const user = await User.findOne({ email: normalized });
@@ -193,12 +193,13 @@ router.post("/login", async (req, res) => {
 });
 
 // Route: Get profile
-router.get("/profile:id", async (req, res) => {
-    const { id } = req.params;
+router.get("/profile/:id", async (req, res) => {
+    const { id } = req.params
 
     try {
         const user = await User.findById(id);
         if (!user) return res.status(404).json({ error: "User not found" });
+
 
         res.json(user);
     } catch (err) {
