@@ -37,14 +37,14 @@ import { useState } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Signup from "./auth/Signup";
 
-import BorderProfile from "./Profile/BorderProfile";
-import AdminProfile from "./Profile/AdminProfile";
+import BorderProfile from "./Profile/BorderProfile/BorderProfile";
+import AdminProfile from "./Profile/AdminProfile/AdminProfile";
 import Home from "./Home";
-import Manager from "./Profile/ManagerProfile";
 import Request from "./auth/Request";
 import Login from "./auth/Login";
 import Contact from "./ContactUs/Contact";
 import Terms from "./termsConditions/Terms";
+import ManagerProfile from "./Profile/MangerProfile/ManagerProfile";
 
 function App() {
 
@@ -57,7 +57,7 @@ function App() {
       <Demo/>
       <TextDemo /> */}
     
-      <BrowserRouter> 
+      {/* <BrowserRouter> 
         <Routes>
           <Route path="*" element={<div>Page Not Found</div>}></Route>
           <Route path="/" element={<Home/>}></Route>
@@ -68,9 +68,10 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/profile/:userId" element ={<BorderProfile/>}></Route>
           <Route path="/adminProfile" element={<AdminProfile/>}></Route>
-          <Route path="/ManagerProfile" element={<Manager/>}></Route>
+          <Route path="/ManagerProfile" element={<ManagerProfile/>}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <ManagerProfile/>
     </>
   )
 }

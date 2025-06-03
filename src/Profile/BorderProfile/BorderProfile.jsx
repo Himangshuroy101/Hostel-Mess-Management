@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import logo from '../assets/images/Logo.jpg';
+// import logo from './assets/images/Logo.jpg';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Border.css'; // Custom styles
 
-export default function Navbar() {
+export default function BorderProfile() {
     const { userId } = useParams();
     const [isOpen, setIsOpen] = useState(false);
     const [user, setUser] = useState(null);
@@ -28,7 +28,7 @@ export default function Navbar() {
         <nav className="navbars navbar shadow-sm rounded bg-white p-3 mb-4">
             <div className="container d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">
-                    <img src={logo} alt="Radhakrishnan Bhawan logo" height={55} width={55} className="me-3 rounded-circle border" />
+                    {/* <img src={logo} alt="Radhakrishnan Bhawan logo" height={55} width={55} className="me-3 rounded-circle border" /> */}
                     <div>
                         <h5 className="mb-0 fw-bold">Radhakrishnan Bhawan</h5>
                         <small className="text-muted">B.T Mens Hall</small>

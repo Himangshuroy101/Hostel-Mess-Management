@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import BorderProfile from "./BorderProfile";
+import BorderProfile from "../BorderProfile/BorderProfile";
 
 
 function AdminProfile() {

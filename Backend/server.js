@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
+
 .then(() => console.log("✅ MongoDB Connected"))
 .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
@@ -28,8 +29,14 @@ app.listen(port, () =>
 const authRoute = require("./Route/auth.router.js");
 app.use("/", authRoute);
 
-const contact = require("./Route/contact.router.js")
-app.use("/", contact)
+const contactRoute = require("./Route/contact.router.js")
+app.use("/", contactRoute)
+
+const MangerHandleRoute = require("./Route/manager.router.js");
+app.use("/", MangerHandleRoute);
+
+// const borderRoute = require("./Route/borderprofile.router.js")
+// app.use("/", borderRoute);
 
 // Route: Root
 app.get("/", (req, res) => {

@@ -1,0 +1,21 @@
+.summary-card {
+  background-color: #2E7169;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+ 
+  
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: bold;
+  color:#f4f7f6; /* blue-600 */
+}

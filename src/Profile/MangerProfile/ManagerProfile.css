@@ -1,0 +1,62 @@
+.app-container {
+  display: flex;
+  background-color: #E6F0EE ;
+  padding: 1rem;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+.main-content {
+  padding: 24px;
+  flex-grow: 1;
+  color: #1E2D2B;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #1E2D2B;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1E2D2B;
+}
+.veg-card{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.nonveg-cards{
+  
+  color: white;
+ 
+  border-radius: 1rem;
+  flex: 1;
+  text-align: left;
+  
+    display:flex;
+    flex-wrap: wrap;
+  
+
+}
+.nonveg-cards .card {
+  background-color: #2E7169;
+  color: white;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  flex: 1 1 ; /* Grow, shrink, base 30% */
+  min-width: 250px; /* responsive breakpoint */
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
+}

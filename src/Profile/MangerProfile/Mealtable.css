@@ -1,0 +1,21 @@
+.meal-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+.meal-table th,
+.meal-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.header-row {
+  background-color:#bde2da; /* light gray */
+  font-weight: 600;
+}
+
+.table-row:hover {
+  background-color:rgb(232, 247, 247); /* subtle hover effect */
+}

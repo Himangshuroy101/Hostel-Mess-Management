@@ -1,0 +1,44 @@
+.sidebar {
+  width: 64px;
+  height: 100rem;
+  background-color: #D8E8E5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 24px; 
+  border-top-right-radius: 1rem; 
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.user-icon {
+  color: #10a296; 
+  font-size: 1.25rem; 
+}
+
+/* SummaryCard.css (if not already styled) */
+/* SideBar.css */
+/* 
+.sidebar {
+  width: 80px;
+  background-color: #34495e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-icon {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+ */

@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const { type } = require("os");
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -51,7 +52,25 @@ const UserSchema = new mongoose.Schema({
     token:{
         type: String,
         default: null,
-    }
+    },
+    // meals:  {
+    //     lunch: {
+    //         type: Boolean,
+    //         default: false,
+    //         required: true
+    //     },
+    //     dinner: {
+    //         type: Boolean,
+    //         default: false,
+    //         required: true
+    //     },
+    //     type: {
+    //         type: String,
+    //         enum: ["veg", "chicken", "fish"],
+    //         required: true,
+    //     }
+    // },
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", UserSchema);
