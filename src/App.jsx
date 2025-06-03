@@ -57,7 +57,7 @@ function App() {
       <Demo/>
       <TextDemo /> */}
     
-      {/* <BrowserRouter> 
+      <BrowserRouter> 
         <Routes>
           <Route path="*" element={<div>Page Not Found</div>}></Route>
           <Route path="/" element={<Home/>}></Route>
@@ -70,8 +70,8 @@ function App() {
           <Route path="/adminProfile" element={<AdminProfile/>}></Route>
           <Route path="/ManagerProfile" element={<ManagerProfile/>}></Route>
         </Routes>
-      </BrowserRouter> */}
-      <ManagerProfile/>
+      </BrowserRouter>
+      {/* <ManagerProfile/> */}
     </>
   )
 }
