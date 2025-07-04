@@ -68,7 +68,7 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/profile/:userId" element ={<BorderProfile/>}></Route>
           <Route path="/adminProfile" element={<AdminProfile/>}></Route>
-          <Route path="/ManagerProfile" element={<ManagerProfile/>}></Route>
+          <Route path="/ManagerProfile/:userId" element={<ManagerProfile/>}></Route>
         </Routes>
       </BrowserRouter>
       {/* <ManagerProfile/> */}

@@ -2,9 +2,15 @@ const mongoose = require("mongoose");
 const { type } = require("os");
 
 const userSchema= new mongoose.Schema({
-    name: {
+    firstName: {
         type: String,
-         required: true
+        required: true,
+        match: /^[A-Za-z]+$/,
+    },
+    lastName: {
+        type: String,
+        required: true,
+        match: /^[A-Za-z]+$/,
     },
     meals:  {
          lunch: {

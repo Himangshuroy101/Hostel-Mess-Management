@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(router);
 
 // Check required environment variables
-if (!process.env.EMAIL || !process.env.PASS) {
+if (!process.env.EMAIL || !process.env.PASS) {  
     console.error("Missing EMAIL or PASS in environment variables.");
     process.exit(1);
 }
@@ -200,8 +200,21 @@ router.get("/profile/:id", async (req, res) => {
         const user = await User.findById(id);
         if (!user) return res.status(404).json({ error: "User not found" });
 
-
         res.json(user);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
+router.get("/ManagerProfile/:id", async (req, res) => {
+    const { id, token } = req.body
+
+    try {
+        const user = await User.findById(id);
+        if (!user && token == null) return res.status(404).json({ error: "User not found" });
+
+        res.json(user); 
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Server error" });

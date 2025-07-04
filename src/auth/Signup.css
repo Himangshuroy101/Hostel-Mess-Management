@@ -1,77 +1,141 @@
-/* .signup{
-    height: 130vh;
-    background-color: rgb(227, 225, 222) !important;
+/* Signup.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
 }
-.form-check a{
-    text-decoration: none;
-}
-.para a{
-    text-decoration: none;
-} */
 
-/* @media (max-width: 576px) {
-    .card {
-        padding: 1.5rem !important;
-    }
-
-    .input-group > .form-control,
-    .input-group > .btn {
-        width: 100%;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-} */
-
-.signups {
+.signup-wrapper {
   min-height: 100vh;
-  background-color: #eef4f7; /* Soft pastel background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.card {
-    display: flex !important;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+.signup-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-control,
-.form-select {
-  border-radius: 12px;
-  box-shadow: none;
-  border: 1px solid #ced4da;
+.signup-card h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
-input::placeholder,
-textarea::placeholder {
-  font-style: italic;
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-label {
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.otp-input {
+  letter-spacing: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.5rem;
+  border: 2px solid #0d6efd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5rem auto;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form-check input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.form-check label {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+}
+
+.success-text {
+  color: green;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.btn-primary {
-  background-color: #0d6efd;
-  border-radius: 10px;
-  padding: 10px;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
 }
 
-.btn-outline-primary {
-  border-radius: 10px;
-  font-weight: 500;
+.form-footer a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-.btn-success {
-  border-radius: 10px;
+.form-footer a:hover {
+  text-decoration: underline;
 }
-
-textarea.form-control {
-  resize: none;
-}
-

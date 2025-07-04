@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./login.css"
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -24,9 +25,9 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setServerErr(""); // clear any previous server errors
+        setServerErr("");
 
-        if (!email || !password) {
+        if (!email || !password ) {
             return alert("Please fill in all fields");
         }
 
@@ -40,62 +41,62 @@ function Login() {
                 password,
             });
 
-            const userId = res.data.user?.id;
+            const user = res.data.user;
+            const userId = user?.id;
+            const token = user?.token;
 
-            if (userId) {
-
+            if (userId && token == null) {
                 localStorage.setItem("userId", userId);
-
                 navigate(`/profile/${userId}`);
+            } else if (userId && token === "Manager") {
+                localStorage.setItem("userId", userId);
+                navigate(`/ManagerProfile/${userId}`);
             } else {
                 setServerErr("Unexpected response from server.");
             }
         } catch (error) {
             console.error("Login failed", error);
-            const message = error.response?.data?.error || error.response?.data?.message || "Login failed. Please try again.";
+            const message =
+                error.response?.data?.error ||
+                error.response?.data?.message ||
+                "Login failed. Please try again.";
             setServerErr(message);
         }
     };
 
     return (
-        <div className="login container-fluid d-flex justify-content-center align-items-center vh-100">
-            <div className="card p-5 shadow-lg" style={{ width: "400px" }}>
-                <h3 className="text-center mb-4">Login Here</h3>
-                <form onSubmit={handleSubmit} noValidate>
-                    <div className="row g-3">
-                        <div className="col-12">
-                            <label htmlFor="email" className="form-label">Email*</label>
-                            <input
-                                type="email"
-                                className="form-control mb-2"
-                                id="email"
-                                placeholder="Enter email"
-                                value={email}
-                                onChange={(e) => validEmail(e.target.value)}
-                                required
-                            />
-                            {emailErr && <p className="text-danger">{emailErr}</p>}
-                        </div>
+        <div className="login-wrapper">
+            <div className="login-card">
+                <h3>Login Here</h3>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="email">Email*</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => validEmail(e.target.value)}
+                            required
+                        />
+                        {emailErr && <p className="error-text">{emailErr}</p>}
+                    </div>
 
-                        <div className="col-12">
-                            <label htmlFor="password" className="form-label">Password*</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="password"
-                                placeholder="Enter password"
-                                value={password}
-                                onChange={(e) => validPassword(e.target.value)}
-                                required
-                            />
-                            {err && <p className="text-danger">{err}</p>}
-                        </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password*</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => validPassword(e.target.value)}
+                            required
+                        />
+                        {err && <p className="error-text">{err}</p>}
+                    </div>
 
-                        {serverErr && <p className="text-danger mt-2">{serverErr}</p>}
+                    {serverErr && <p className="error-text">{serverErr}</p>}
 
-                        <div className="col-12 d-grid mt-3">
-                            <button type="submit" className="btn btn-primary">Log in</button>
-                        </div>
+                    <div className="form-group">
+                        <button type="submit">Log in</button>
                     </div>
                 </form>
             </div>

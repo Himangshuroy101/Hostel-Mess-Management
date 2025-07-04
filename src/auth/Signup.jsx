@@ -99,7 +99,7 @@ function Signup() {
       setOtpmessage("OTP verified successfully!");
       setOtpverified(true);
       setShowOtpField(false);
-      alert("OTP Verified.")
+      alert("OTP Verified.");
     } catch (err) {
       setOtpverified(false);
       setOtpmessage("Invalid OTP");
@@ -153,111 +153,85 @@ function Signup() {
   };
 
   return (
-    <div className="signups container-fluid d-flex justify-content-center align-items-center">
-      <div className="card p-5 shadow-lg d-flex" style={{ width: "750px" }}>
-        <h3 className="text-center mb-4">Register Here</h3>
-        <form onSubmit={handleSubmit} className="needs-validation" noValidate>
-          <div className="row g-3">
-            <div className="col-md-6">
-              <label htmlFor="firstName" className="form-label">First Name*</label>
-              <input type="text" className="form-control" id="firstName" placeholder="Enter first name" value={name} onChange={(e) => validName(e.target.value)} required />
-              {nameErr && <p style={{ color: 'red' }}>{nameErr}</p>}
+    <div className="signup-wrapper">
+      <div className="signup-card">
+        <h3>Register Here</h3>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>First Name*</label>
+            <input type="text" value={name} onChange={(e) => validName(e.target.value)} required />
+            {nameErr && <p className="error-text">{nameErr}</p>}
+          </div>
+
+          <div className="form-group">
+            <label>Last Name*</label>
+            <input type="text" value={lastname} onChange={(e) => validLastName(e.target.value)} required />
+            {lastnameErr && <p className="error-text">{lastnameErr}</p>}
+          </div>
+
+          <div className="form-group">
+            <label>Address*</label>
+            <textarea value={address} onChange={(e) => setAddress(e.target.value)} rows="2" required />
+          </div>
+
+          <div className="form-group">
+            <label>Email*</label>
+            <input type="email" value={email} onChange={(e) => validEmail(e.target.value)} required />
+            {emailErr && <p className="error-text">{emailErr}</p>}
+            <button type="button" onClick={handleOTP} disabled={loading}>
+              {loading ? "Sending OTP..." : "Send OTP"}
+            </button>
+          </div>
+
+          {showOtpField && (
+            <div className="form-group">
+              <label>Enter OTP*</label>
+              <input type="text" value={otp} onChange={(e) => setOtp(e.target.value)} required className="otp-input" />
+              <button type="button" onClick={verifyOTP}>Verify OTP</button>
+              {otpmessage && <p className={otpverified ? "success-text" : "error-text"}>{otpmessage}</p>}
             </div>
+          )}
 
-            <div className="col-md-6">
-              <label htmlFor="lastName" className="form-label">Last Name*</label>
-              <input type="text" className="form-control" id="lastName" placeholder="Enter last name" value={lastname} onChange={(e) => validLastName(e.target.value)} required />
-              {lastnameErr && <p style={{ color: 'red' }}>{lastnameErr}</p>}
-            </div>
+          <div className="form-group">
+            <label>Password*</label>
+            <input type="password" value={password} onChange={(e) => validPassword(e.target.value)} required />
+            {err && <p className="error-text">{err}</p>}
+          </div>
 
-            <div className="col-12">
-              <label htmlFor="address" className="form-label">Address*</label>
-              <textarea className="form-control" id="address" placeholder="Enter address" value={address} onChange={(e) => setAddress(e.target.value)} rows="2" required />
-            </div>
+          <div className="form-group">
+            <label>Department*</label>
+            <input type="text" value={department} onChange={(e) => validDepartment(e.target.value)} required />
+            {deptnameerr && <p className="error-text">{deptnameerr}</p>}
+          </div>
 
-            <div className="col-12">
-              <label htmlFor="email" className="form-label">Email*</label>
-              <input type="email" className="form-control mb-2" id="email" placeholder="Enter email" value={email} onChange={(e) => validEmail(e.target.value)} required />
-              {emailErr && <p style={{ color: 'red' }}>{emailErr}</p>}
-              <button className="btn btn-outline-primary" onClick={handleOTP} disabled={loading}>
-                {loading ? "Sending OTP..." : "Send OTP"}
-              </button>
-            </div>
+          <div className="form-group">
+            <label>Course Duration*</label>
+            <select value={courseDuration} onChange={(e) => setCourseDuration(e.target.value)} required>
+              <option value="">Choose year</option>
+              <option>1 Year</option>
+              <option>2 Year</option>
+              <option>3 Year</option>
+              <option>4 Year</option>
+            </select>
+          </div>
 
-            {showOtpField && (
-              <div className="col-12 text-center">
-                <label htmlFor="otp" className="form-label">Enter OTP*</label>
-                <input
-                  type="text"
-                  className="form-control mx-auto mb-2"
-                  id="otp"
-                  style={{
-                    maxWidth: "300px",
-                    fontSize: "1.2rem",
-                    letterSpacing: "5px",
-                    textAlign: "center",
-                    border: "2px solid #0d6efd",
-                    borderRadius: "8px",
-                    boxShadow: "0 0 10px rgba(13, 110, 253, 0.2)"
-                  }}
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  required
-                />
-                <button className="btn btn-success mb-2" onClick={verifyOTP}>Verify OTP</button>
-                {otpmessage && (
-                  <p style={{ color: otpverified ? 'green' : 'red', fontWeight: '500' }}>{otpmessage}</p>
-                )}
-              </div>
-            )}
+          <div className="form-group">
+            <label>Admission ID*</label>
+            <input type="text" maxLength="6" value={appliId} onChange={(e) => handleApplicationId(e.target.value)} required />
+            {iderror && <p className="error-text">{iderror}</p>}
+          </div>
 
+          <div className="form-check">
+            <input type="checkbox" checked={termsAccepted} onChange={(e) => setTermsAccepted(e.target.checked)} required />
+            <label>I agree to the <Link to="/terms">terms and conditions</Link>.</label>
+          </div>
 
+          <div className="form-group">
+            <button type="submit">Sign up</button>
+          </div>
 
-            <div className="col-12">
-              <label htmlFor="password" className="form-label">Password*</label>
-              <input type="password" className="form-control" id="password" value={password} onChange={(e) => validPassword(e.target.value)} required />
-              {err && <p style={{ color: 'red' }}>{err}</p>}
-            </div>
-
-            <div className="col-12">
-              <label htmlFor="department" className="form-label">Department*</label>
-              <input type="text" className="form-control" id="department" value={department} onChange={(e) => validDepartment(e.target.value)} required />
-              {deptnameerr && <p style={{ color: 'red' }}>{deptnameerr}</p>}
-            </div>
-
-            <div className="col-md-4">
-              <label htmlFor="duration" className="form-label">Course Duration*</label>
-              <select className="form-select" id="duration" value={courseDuration} onChange={(e) => setCourseDuration(e.target.value)} required>
-                <option disabled value="">Choose year</option>
-                <option>1 Year</option>
-                <option>2 Year</option>
-                <option>3 Year</option>
-                <option>4 Year</option>
-              </select>
-            </div>
-
-            <div className="col-md-8">
-              <label htmlFor="admissionId" className="form-label">Admission ID*</label>
-              <input type="text" className="form-control" id="admissionId" maxLength="6" value={appliId} onChange={(e) => handleApplicationId(e.target.value)} required />
-              {iderror && <p style={{ color: 'red' }}>{iderror}</p>}
-            </div>
-
-            <div className="col-12">
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" id="termsCheck" checked={termsAccepted} onChange={(e) => setTermsAccepted(e.target.checked)} required />
-                <label className="form-check-label" htmlFor="termsCheck">
-                  I agree to the <Link to="/terms">terms and conditions</Link>.
-                </label>
-              </div>
-            </div>
-
-            <div className="col-12 d-grid mt-3">
-              <button type="submit" className="btn btn-primary">Sign up</button>
-            </div>
-
-            <div className="para col-12 text-center mt-3">
-              <p>Already registered? <Link to="/login">Sign in</Link></p>
-            </div>
+          <div className="form-footer">
+            <p>Already registered? <Link to="/login">Sign in</Link></p>
           </div>
         </form>
       </div>
