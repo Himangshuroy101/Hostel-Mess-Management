@@ -192,6 +192,10 @@ router.post("/login", async (req, res) => {
     }
 });
 
+router.post("/logout", async(req, res)=>{
+    res.status(200).json({ success: true, message: "Logged out successfully." })
+})
+
 // Route: Get profile
 router.get("/profile/:id", async (req, res) => {
     const { id } = req.params

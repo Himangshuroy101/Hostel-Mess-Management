@@ -1,4 +1,71 @@
-/* @keyframes fadeInUp {
+/* Request.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.request-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #eef2f6;
+}
+
+.request-card {
+  background-color: #fff;
+  padding: 2.5rem 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.request-card h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+.request-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.done-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #28a745;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #28a745;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.done-button:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.redirect-msg {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Fade in up animation */
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -8,7 +75,3 @@
     transform: translateY(0);
   }
 }
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
-} */

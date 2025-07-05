@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import logo from './assets/images/Logo.jpg';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Border.css'; // Custom styles
@@ -24,42 +23,39 @@ export default function BorderProfile() {
         fetchUser();
     }, [userId]);
 
+    
+
     return (
-        <nav className="navbars navbar shadow-sm rounded bg-white p-3 mb-4">
-            <div className="container d-flex justify-content-between align-items-center">
-                <div className="d-flex align-items-center">
-                    {/* <img src={logo} alt="Radhakrishnan Bhawan logo" height={55} width={55} className="me-3 rounded-circle border" /> */}
+        <nav className="navbars">
+            <div className="navbar-container">
+                <div className="brand-section">
+                    {/* Logo can be added here */}
                     <div>
-                        <h5 className="mb-0 fw-bold">Radhakrishnan Bhawan</h5>
-                        <small className="text-muted">B.T Mens Hall</small>
+                        <h5>Radhakrishnan Bhawan</h5>
+                        <small>B.T Mens Hall</small>
                     </div>
                 </div>
 
-                <div className={`d-flex align-items-center ${isOpen ? 'd-block' : 'd-none d-md-flex'}`}>
-                    <Link to={`/profile/${userId}`} className="me-3 text-decoration-none fw-medium">
+                <div className={`nav-links ${isOpen ? 'show' : ''}`}>
+                    <Link to={`/profile/${userId}`} className="nav-user">
                         {user ? `${user.firstName} ${user.lastName}` : "Profile Name"}
                     </Link>
 
                     <img
                         src={"https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg"}
                         alt="profile"
-                        className="rounded-circle me-3"
-                        style={{ width: "50px", height: "50px", objectFit: "cover" }}
+                        className="profile-pic"
                     />
 
-                    <Link to="/" className="btn btn-outline-danger">
-                        Logout <i className="fa-solid fa-right-from-bracket ms-1"></i>
+                    <Link to="/" className="logout-btn">
+                        Logout
                     </Link>
                 </div>
 
-                <div className="d-md-none">
-                    <button className="btn btn-outline-secondary" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? "✖" : "☰"}
-                    </button>
-                </div>
+                <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? "✖" : "☰"}
+                </button>
             </div>
         </nav>
     );
 }
-
-

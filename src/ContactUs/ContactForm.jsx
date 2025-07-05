@@ -49,8 +49,8 @@ function ContactForm() {
   const mapLink =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.3806572707267!2d88.43156537509029!3d22.973025729208533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f895005d1b5ab7%3A0xac7e734c7f60a8a6!2sRADHAKRISHNAN%20BHAWAN%20(B.T.%20MEN%27S%20HALL)!5e0!3m2!1sen!2sin!4v1747980905227!5m2!1sen!2sin";
 
-  const phone = "+919431283431";
-  const whatsapp = "9431283431";
+  const phone = "+916294769803";
+  const whatsapp = "6294769803"
   const Hostel = "BT Mens";
   const Warden = "Supriyo Ghoshal";
   const ManagerContact = "+916294769803";
